@@ -12,7 +12,7 @@ import projects from './assets/projects.json'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/react-portfolio/'>
     <div>
       <Nav />
       <Route exact path="/" component={About} />

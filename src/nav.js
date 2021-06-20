@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './styles.css';
 
 function Nav() {
+  const location = useLocation();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light transparent">
-    <a className="navbar-brand" href="/">RTJ Design</a>
+    <Link to="/" className={"nav-link active"}>
+          RTJ Design
+        </Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -13,13 +18,19 @@ function Nav() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item active">
-          <a className="nav-link" href="/">About</a>
+          <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
+          About
+        </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/portfolio">Portfolio</a>
+        <Link to="/portfolio" className={location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}>
+          Portfolio
+        </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/contact">Contact</a>
+        <Link to="/contact" className={location.pathname === "/contact" ? "nav-link active" : "nav-link"}>
+          Contact
+        </Link>
         </li>
       </ul>
 

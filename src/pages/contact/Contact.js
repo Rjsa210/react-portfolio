@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 export default class Contact extends Component {
   render() {
